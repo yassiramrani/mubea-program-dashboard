@@ -347,6 +347,7 @@ code {
 .pcard {
   display: block;
   padding: 24px;
+  min-width: 0;
   text-decoration: none;
   color: inherit;
   border-top: 4px solid var(--c, var(--blue));
@@ -355,7 +356,7 @@ code {
 
 .pcard:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(16, 32, 52, 0.06), 0 20px 40px -18px rgba(16, 32, 52, 0.3); }
 
-.pcard header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.pcard header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
 .pcard h3 { margin: 0; font-size: 18px; color: var(--navy); letter-spacing: -0.01em; }
 .pcard p { margin: 0 0 16px; font-size: 14px; color: var(--muted); }
 
@@ -364,6 +365,7 @@ code {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
   font-size: 12.5px;
   color: var(--muted);
   border-top: 1px dashed var(--line);
@@ -374,6 +376,7 @@ code {
 
 .badge {
   flex: 0 0 auto;
+  max-width: 100%;
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -811,6 +814,7 @@ code {
   .date-badge { font-size: 11.5px; padding: 5px 10px; }
   .brand-text small { display: none; }
   .figure figcaption { flex-direction: column; gap: 4px; }
+  .badge { white-space: normal; }
 }
 
 /* ---------- Print ---------- */
