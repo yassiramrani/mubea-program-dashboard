@@ -585,8 +585,8 @@ code {
 
 .shots {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 26px;
   margin: 26px 0 0;
 }
 
@@ -598,8 +598,6 @@ code {
   color: var(--muted);
   line-height: 1.45;
 }
-
-.shots-single { grid-template-columns: minmax(0, 560px); }
 
 /* ---------- Tables ---------- */
 
@@ -805,8 +803,6 @@ code {
   .hero { padding: 54px 0 60px; }
   .section { padding: 54px 0; }
   .detail { padding: 22px; }
-  .shots { grid-template-columns: 1fr; }
-  .shots-single { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 560px) {
