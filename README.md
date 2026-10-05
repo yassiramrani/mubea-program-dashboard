@@ -7,8 +7,9 @@ A self-contained static website that presents the progress of the four projects:
 - **Mubea Technicien Dashboard** — tools inventory with barcode labels (in service)
 - **Overtime Management System** — overtime workflow, approvals, assignments, CSV hand-off (Phase 1 verified; administration console, account management and password change delivered)
 
-Contents: overview KPIs, per-project status, verified evidence, provisional planning (Gantt
-snapshots), the open decisions on the critical path and the tooling requests.
+Contents: overview KPIs, per-project status with application screenshots, verified evidence,
+provisional planning (Gantt snapshots), the open decisions on the critical path and the tooling
+requests.
 
 No build step, no dependencies — plain HTML/CSS/JS.
 
@@ -73,6 +74,8 @@ Windows are added for this terminal session.
 
 - Content lives in `index.html` (text, statuses, tables).
 - Styling: `assets/styles.css`; behaviour: `assets/app.js` (lightbox + reveal animation).
+- Application screenshots live in `assets/img/apps/` — one PNG per screen, named
+  `<project>-<screen>.png` and referenced from the project detail sections.
 - Replace the Gantt snapshots in `assets/img/` (`gantt-mubeabsent.png`, `gantt-portal.png`,
   `gantt-overtime.png`) and update the "Updated …" date in `index.html` when the planning
   changes. Redeploy with `npx vercel --prod`.
