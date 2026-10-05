@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mubea Digital — Programme Progress Dashboard</title>
+<meta name="description" content="Progress dashboard for the MubeAbsent, Mubea Portal, Mubea Technicien Dashboard and Overtime Management System projects — delivered scope, planning and open decisions.">
+<meta name="author" content="Yassir AMRANI — Mubea Suspension Components Morocco SARL">
+<meta property="og:title" content="Mubea Digital — Programme Progress Dashboard">
+<meta property="og:description" content="Four applications, one programme: delivered scope, verified evidence, planning and open decisions.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b2b4a'/%3E%3Cpath d='M8 23V9h4.2l3.8 7 3.8-7H24v14h-3.6v-8.1L17.2 21h-2.4l-3.2-6.1V23H8z' fill='%234da3ff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topbar no-print">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-text"><strong>Mubea Digital</strong><small>Programme progress</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Sections">
+      <a href="#overview">Overview</a>
+      <a href="#projects">Projects</a>
+      <a href="#planning">Planning &amp; decisions</a>
+      <a href="#evidence">Evidence</a>
+    </nav>
+    <span class="date-badge">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5l3.2 1.9M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+      Updated 5 October 2026
+    </span>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Programme progress update · Monday 5 October 2026</p>
+      <h1>Four applications. One programme.<br><span>Full visibility on progress.</span></h1>
+      <p class="lead">Status of the <strong>MubeAbsent</strong>, <strong>Mubea Portal</strong>, <strong>Mubea Technicien Dashboard</strong> and <strong>Overtime Management System</strong> projects — what has been delivered, what is verified, the updated planning and the decisions we are waiting for.</p>
+      <div class="chips">
+        <span class="chip">4 projects tracked</span>
+        <span class="chip">343 automated tests green</span>
+        <span class="chip">CI passing on main</span>
+        <span class="chip chip-warn">Next decisions due 9 October</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">Explore the projects</a>
+        <a class="btn btn-ghost" href="https://mubeatechniciendashboard.vercel.app/" target="_blank" rel="noopener">
+          Technicien Dashboard — live
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview" class="section">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Overview</p>
+        <h2>The programme at a glance</h2>
+        <p class="section-sub">Two prototypes are complete and packaged for deployment, one application is already in service, and one has just completed its first verified phase.</p>
+      </header>
+
+      <div class="kpis">
+        <div class="kpi card reveal">
+          <span class="kpi-num">4</span>
+          <h3>Applications in the programme</h3>
+          <p>MubeAbsent · Mubea Portal · Technicien Dashboard · Overtime</p>
+        </div>
+        <div class="kpi card reveal">
+          <span class="kpi-num">343</span>
+          <h3>Automated tests green</h3>
+          <p>88 Overtime · 195 Portal · 60 MubeAbsent — the full Overtime suite, PostgreSQL concurrency tests included, is green in remote CI</p>
+        </div>
+        <div class="kpi card reveal">
+          <span class="kpi-num">49</span>
+          <h3>End-to-end HTTPS checks passed</h3>
+          <p>Sign-in, catalogue, leave request, manager decision and confidentiality — on the packaged Portal + MubeAbsent build</p>
+        </div>
+        <div class="kpi card reveal">
+          <span class="kpi-num">1</span>
+          <h3>Application already in service</h3>
+          <p>Technicien Dashboard — live on Vercel, with follow-up and improvements planned</p>
+        </div>
+      </div>
+
+      <div class="week-strip">
+        <h3 class="strip-title">What changed since the last review</h3>
+        <div class="week-grid">
+          <div class="week-item card reveal">
+            <span class="dot" style="--c:#e8590c"></span>
+            <div>
+              <strong>Overtime — console, accounts and password change delivered</strong>
+              <p>Administration console (KPIs, approval queue, outbox health, workload, export batches), superuser account &amp; role management, and self-service password change with token rotation.</p>
+            </div>
+          </div>
+          <div class="week-item card reveal">
+            <span class="dot" style="--c:#2563eb"></span>
+            <div>
+              <strong>Portal &amp; MubeAbsent — deployment packaging verified</strong>
+              <p>One HTTPS address (Docker + Caddy), 49 end-to-end checks, restart and restore rehearsal passed.</p>
+            </div>
+          </div>
+          <div class="week-item card reveal">
+            <span class="dot" style="--c:#0f9d8f"></span>
+            <div>
+              <strong>Notifications stage 1 hardened — full suite green in CI</strong>
+              <p>HTML + plain-text templates, queue-health command with systemd timers and TEST/DEMO safeguards; CI runs the complete 88-test Overtime suite on PostgreSQL plus the browser workflow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        <a class="pcard card reveal" href="#p-mubeabsent" style="--c:#0f9d8f">
+          <header>
+            <h3>MubeAbsent</h3>
+            <span class="badge badge-progress">In progress</span>
+          </header>
+          <p>Annual-leave workflow, team calendar and manual administration — prototype complete, production preparation under way.</p>
+          <div class="segs segs-7" aria-hidden="true"><span class="seg active"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div>
+          <footer><span>Stage 1 of 7 · Confirm HR requirements</span><span class="go">Details →</span></footer>
+        </a>
+        <a class="pcard card reveal" href="#p-portal" style="--c:#2563eb">
+          <header>
+            <h3>Mubea Portal</h3>
+            <span class="badge badge-ready">Ready to deploy</span>
+          </header>
+          <p>Role-based application catalogue, account and role administration, and production packaging — ready to deploy.</p>
+          <div class="segs segs-4" aria-hidden="true"><span class="seg done"></span><span class="seg active"></span><span class="seg"></span><span class="seg"></span></div>
+          <footer><span>Stage 2 of 4 · Confirm launch prerequisites</span><span class="go">Details →</span></footer>
+        </a>
+        <a class="pcard card reveal" href="#p-technicien" style="--c:#7c3aed">
+          <header>
+            <h3>Mubea Technicien Dashboard</h3>
+            <span class="badge badge-live">In service</span>
+          </header>
+          <p>Tools inventory with QR/barcode labels, overdue-assignment alerts and usage analytics — live on Vercel.</p>
+          <div class="segs segs-5" aria-hidden="true"><span class="seg done"></span><span class="seg active"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div>
+          <footer><span>Stage 2 of 5 · Service review</span><span class="go">Details →</span></footer>
+        </a>
+        <a class="pcard card reveal" href="#p-overtime" style="--c:#e8590c">
+          <header>
+            <h3>Overtime Management System</h3>
+            <span class="badge badge-progress">Phase 1 complete · console delivered</span>
+          </header>
+          <p>Advance overtime workflow with approvals, assignments and CSV hand-off — Phase 1 verified; administration console, account management and password change delivered.</p>
+          <div class="segs segs-5" aria-hidden="true"><span class="seg done"></span><span class="seg active"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div>
+          <footer><span>Stage 2 of 5 · Configure email notifications — awaiting IT decision</span><span class="go">Details →</span></footer>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section section-alt">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Project detail</p>
+        <h2>Where each project stands</h2>
+        <p class="section-sub">Delivered scope, latest milestone, job stoppers and the provisional Gantt for each application. Dates are indicative and are revalidated at the weekly review.</p>
+      </header>
+
+      <!-- MubeAbsent -->
+      <article class="detail card reveal" id="p-mubeabsent" style="--c:#0f9d8f">
+        <header class="detail-head">
+          <div>
+            <h3><span class="dot" aria-hidden="true"></span>MubeAbsent</h3>
+            <p class="platform">Ships inside the Mubea Portal deployment · ASP.NET Core · shared sign-in, separate storage</p>
+          </div>
+          <span class="badge badge-progress">Prototype complete · preparing production</span>
+        </header>
+        <div class="detail-grid">
+          <div class="detail-main">
+            <h4>What has been delivered</h4>
+            <ul class="ticks">
+              <li>Annual-leave workflow: employee request → manager decision → shared team calendar.</li>
+              <li>Whole-year calendar with Moroccan holidays and a configurable working week.</li>
+              <li>Manual administration of people, teams and entitlements — no dependency on an HR system yet.</li>
+              <li>60 automated tests pass; leave request, decision and comment confidentiality all verified in the 49 end-to-end HTTPS checks.</li>
+              <li>Preparation-to-production plan with checkpoints and exit criteria through March 2027.</li>
+            </ul>
+            <div class="callout callout-note">
+              <h5>Latest milestone</h5>
+              <p>Deployment packaging verified end-to-end on 1 October — MubeAbsent served under <code>/apps/mubeabsent</code> behind a shared HTTPS address, with accounts, sessions and approved leave preserved across restart and restore.</p>
+            </div>
+            <h4>Job stoppers</h4>
+            <ul class="stoppers">
+              <li><strong>HR first-batch validation</strong> — absence types to cover, balance/rollover rules and the target go-live date. Requested by 9 October.</li>
+              <li><strong>HR data source and test data</strong> — contact point and access for the employee integration. Requested by 16 October.</li>
+              <li><strong>Email service access (IT)</strong> — needed for notifications to employees and managers.</li>
+            </ul>
+          </div>
+          <aside class="detail-side">
+            <h4>Stages &amp; targets</h4>
+            <ol class="tracker">
+              <li class="step active"><span class="step-dot"></span><div><strong>1 · Confirm HR requirements</strong><small>Target 16 Oct 2026</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>2 · Complete core workflows</strong><small>Target 13 Nov 2026</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>3 · Notifications and data process</strong><small>Target 11 Dec 2026</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>4 · Balances, calendar and history</strong><small>Target 15 Jan 2027</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>5 · Secure production setup</strong><small>Target 12 Feb 2027</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>6 · User validation and fixes</strong><small>Target 12 Mar 2027</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>7 · Launch decision and stabilisation</strong><small>Target 26 Mar 2027</small></div></li>
+            </ol>
+          </aside>
+        </div>
+        <figure class="figure">
+          <button class="zoom" type="button" data-full="assets/img/gantt-mubeabsent.png" aria-label="Open the MubeAbsent Gantt full size">
+            <img src="assets/img/gantt-mubeabsent.png" alt="MubeAbsent planning Gantt — preparation to production" loading="lazy">
+          </button>
+          <figcaption>
+            <span>Planning progress — MubeAbsent (preparation to production).</span>
+            <a href="assets/img/gantt-mubeabsent.png" target="_blank" rel="noopener">Open full size</a>
+          </figcaption>
+        </figure>
+      </article>
+
+      <!-- Mubea Portal -->
+      <article class="detail card reveal" id="p-portal" style="--c:#2563eb">
+        <header class="detail-head">
+          <div>
+            <h3><span class="dot" aria-hidden="true"></span>Mubea Portal</h3>
+            <p class="platform">ASP.NET Core MVC · Docker + Caddy · local accounts, Entra ID ready</p>
+          </div>
+          <span class="badge badge-ready">Prototype complete · ready to deploy</span>
+        </header>
+        <div class="detail-grid">
+          <div class="detail-main">
+            <h4>What has been delivered</h4>
+            <ul class="ticks">
+              <li>Role-based application catalogue: every employee sees only the applications they are entitled to.</li>
+              <li>Account and role administration inside the portal — create, deactivate, reset passwords, manage roles and rights.</li>
+              <li>Production packaging: Docker Compose + Caddy behind one HTTPS address — portal at <code>/</code>, MubeAbsent at <code>/apps/mubeabsent</code> — with shared sign-in and separate persistent storage.</li>
+              <li>195 automated tests pass with zero build warnings; 49 end-to-end HTTPS checks passed on the packaged build, including refusal paths and account closure.</li>
+              <li>Restart and restore rehearsed: accounts, sessions and approved leave survived restarts and restoration into fresh volumes.</li>
+              <li>Operating procedure documented: start, update, rollback, backup and restore.</li>
+            </ul>
+            <div class="callout callout-note">
+              <h5>Latest milestone</h5>
+              <p>Public-deployment batch prepared and validated locally on 1 October — the only steps left before publication are the server, the domain name and the public HTTPS certificate.</p>
+            </div>
+            <h4>Job stoppers</h4>
+            <ul class="stoppers">
+              <li><strong>Server and public domain name</strong> — Docker host, ports 80/443 and certificate contact. Decision requested by 9 October (Management + IT).</li>
+              <li><strong>Email service and Entra ID registration (IT)</strong> — password-reset journey and company sign-in before opening to employees.</li>
+              <li><strong>Pilot test accounts and business sign-off</strong> — real accounts for acceptance, from 13 November.</li>
+            </ul>
+          </div>
+          <aside class="detail-side">
+            <h4>Stages &amp; targets</h4>
+            <ol class="tracker">
+              <li class="step done"><span class="step-dot"></span><div><strong>1 · Prototype</strong><small>Catalogue, accounts, roles, admin — verified</small></div></li>
+              <li class="step active"><span class="step-dot"></span><div><strong>2 · Confirm launch prerequisites</strong><small>Decision due 9 Oct · target 20 Nov 2026</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>3 · Open the first internal version</strong><small>Target 18 Dec 2026</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>4 · Validate access and finalise</strong><small>Target 29 Jan 2027</small></div></li>
+            </ol>
+          </aside>
+        </div>
+        <figure class="figure">
+          <button class="zoom" type="button" data-full="assets/img/gantt-portal.png" aria-label="Open the Mubea Portal Gantt full size">
+            <img src="assets/img/gantt-portal.png" alt="Mubea Portal planning Gantt" loading="lazy">
+          </button>
+          <figcaption>
+            <span>Planning progress — Mubea Portal.</span>
+            <a href="assets/img/gantt-portal.png" target="_blank" rel="noopener">Open full size</a>
+          </figcaption>
+        </figure>
+      </article>
+
+      <!-- Technicien Dashboard -->
+      <article class="detail card reveal" id="p-technicien" style="--c:#7c3aed">
+        <header class="detail-head">
+          <div>
+            <h3><span class="dot" aria-hidden="true"></span>Mubea Technicien Dashboard</h3>
+            <p class="platform">Next.js · Prisma · Vercel — <a href="https://mubeatechniciendashboard.vercel.app/" target="_blank" rel="noopener">mubeatechniciendashboard.vercel.app</a> (sign-in required)</p>
+          </div>
+          <span class="badge badge-live">In service</span>
+        </header>
+        <div class="detail-grid">
+          <div class="detail-main">
+            <h4>What is live today</h4>
+            <ul class="ticks">
+              <li>Tools inventory with compact Code 128 barcode labels (40 × 20 mm), guided scanning and label printing.</li>
+              <li>Overdue-assignment highlighting, 7-day usage trends and utilisation dashboards.</li>
+              <li>Technician identification profiles for naming tools and photos.</li>
+              <li>Session security hardened: a signed session is required for every page and every API route.</li>
+              <li>Deployed and operating on Vercel — the first application of the programme in service.</li>
+            </ul>
+            <div class="callout callout-ok">
+              <h5>Latest milestone</h5>
+              <p>Security hardening completed on 23 September — signed sessions across all pages and API routes.</p>
+            </div>
+            <h4>Job stoppers</h4>
+            <p class="nothing">Nothing to highlight.</p>
+          </div>
+          <aside class="detail-side">
+            <h4>Stages &amp; targets</h4>
+            <ol class="tracker">
+              <li class="step done"><span class="step-dot"></span><div><strong>1 · In service</strong><small>Live on Vercel</small></div></li>
+              <li class="step active"><span class="step-dot"></span><div><strong>2 · Service review &amp; user feedback</strong><small>Target 27 Nov 2026</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>3 · Prioritised improvements</strong><small>Target 26 Feb 2027</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>4 · Verify &amp; document</strong><small>Target 30 Apr 2027</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>5 · Follow-up assessment</strong><small>Target 25 Jun 2027</small></div></li>
+            </ol>
+          </aside>
+        </div>
+      </article>
+
+      <!-- Overtime -->
+      <article class="detail card reveal" id="p-overtime" style="--c:#e8590c">
+        <header class="detail-head">
+          <div>
+            <h3><span class="dot" aria-hidden="true"></span>Overtime Management System</h3>
+            <p class="platform">Django REST · React + Vite · PostgreSQL · SQLite for local development</p>
+          </div>
+          <span class="badge badge-progress">Phase 1 complete · console &amp; notifications delivered</span>
+        </header>
+        <div class="detail-grid">
+          <div class="detail-main">
+            <h4>What has been delivered</h4>
+            <ul class="ticks">
+              <li>Full workflow: department submission → head-manager approval or rejection → HR employee assignment → reviewed CSV export (<code>approval-review-v1</code>), with audit history and pending withdrawal.</li>
+              <li>Workflow boundaries hardened: request owners cannot forge approvals, generic edits and deletions are blocked, and admin views are read-only.</li>
+              <li>Notification system: durable outbox, scheduled delivery command with bounded retries, HTML + plain-text templates, queue-health checks and TEST/DEMO redirection safeguards; two verified senders (local SMTP capture and the signed-in Outlook desktop client). Production sender and scheduler still pending.</li>
+              <li>Administration console for superusers: system KPIs, longest-waiting approval queue, outbox health, department workload, saved export batches and an accounts directory with account &amp; role management (create, role/department changes, password reset, deactivation with lockout guards).</li>
+              <li>Self-service password change from every workspace header — rotates the API token and signs out the account's other sessions.</li>
+              <li>Account provisioning command — five manager accounts created in the local environment.</li>
+              <li>Documentation refreshed: project status, verification record, remaining-work plan and setup guide.</li>
+            </ul>
+            <div class="callout callout-today">
+              <h5>Latest — 5 October 2026</h5>
+              <ul>
+                <li>Delivered the administration console, superuser account &amp; role management and self-service password change — eight new account/password tests, 88 in the suite.</li>
+                <li>Hardened notification stage 1: HTML + plain-text templates, <code>check_notifications</code> queue-health command with systemd timers, and TEST/DEMO recipient safeguards; rollout waits on the IT sender decision.</li>
+                <li>Remote CI caught and verified a PostgreSQL-only test defect (run #5); runs #6–#7 green on Linux — full 88-test suite on PostgreSQL plus front-end build and browser workflow.</li>
+                <li>Browser workflow extended: dept → head → HR → admin console, account create/deactivate and password rotation. <strong>88 backend tests</strong> (85 pass + 3 PostgreSQL-only skips locally).</li>
+                <li>Delivered 4 workflow notifications end-to-end (head manager, HR and requester routes) through SMTP capture and the Outlook desktop client.</li>
+              </ul>
+            </div>
+            <h4>Job stoppers</h4>
+            <ul class="stoppers">
+              <li><strong>Hosting and domain decision</strong> (Management + IT) — blocks staging and the operations phase.</li>
+              <li><strong>Production email sender identity</strong> (IT) — Microsoft Graph application, internal relay or service mailbox; must be decided before notifications can be scheduled.</li>
+              <li><strong>HR confirmation that hours are employee-hours</strong>, plus reconciliation of legacy approvals (HR) — gates the business acceptance phase and export eligibility.</li>
+              <li><strong>MFA / SSO requirements</strong> (IT) — gates public access (Phase 2).</li>
+            </ul>
+          </div>
+          <aside class="detail-side">
+            <h4>Stages &amp; targets</h4>
+            <ol class="tracker">
+              <li class="step done"><span class="step-dot"></span><div><strong>1 · Phase 1 — workflow &amp; verification</strong><small>Completed 2 Oct 2026</small></div></li>
+              <li class="step active"><span class="step-dot"></span><div><strong>2 · Configure email notifications</strong><small>Target 13 Nov 2026 · awaiting IT sender decision</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>3 · Final security review and fixes</strong><small>Target 18 Dec 2026</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>4 · Validate notifications, roles and security</strong><small>Target 15 Jan 2027</small></div></li>
+              <li class="step"><span class="step-dot"></span><div><strong>5 · Production readiness and release decision</strong><small>Target 29 Jan 2027</small></div></li>
+            </ol>
+          </aside>
+        </div>
+        <figure class="figure">
+          <button class="zoom" type="button" data-full="assets/img/gantt-overtime.png" aria-label="Open the Overtime Gantt full size">
+            <img src="assets/img/gantt-overtime.png" alt="Overtime Management System planning Gantt" loading="lazy">
+          </button>
+          <figcaption>
+            <span>Planning progress — Overtime Management System.</span>
+            <a href="assets/img/gantt-overtime.png" target="_blank" rel="noopener">Open full size</a>
+          </figcaption>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <section id="planning" class="section">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Planning &amp; decisions</p>
+        <h2>Decisions and access needed to keep moving</h2>
+        <p class="section-sub">These items are on the critical path. Dates are indicative and are revalidated at the weekly Friday review — they are not delivery commitments.</p>
+      </header>
+      <div class="table-wrap card reveal">
+        <table class="table">
+          <thead>
+            <tr><th>Decision / access needed</th><th>Project(s)</th><th>Owner</th><th>Requested by</th><th>Impact if delayed</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Hosting choice, public URL and HTTPS certificate</td><td>Portal / MubeAbsent</td><td>Management + IT</td><td><span class="due">9 Oct 2026</span></td><td>Conditions deployment and go-live</td></tr>
+            <tr><td>First-batch scope: absence types to cover</td><td>MubeAbsent</td><td>Management + HR</td><td><span class="due">9 Oct 2026</span></td><td>Fixes the delivery estimate</td></tr>
+            <tr><td>MubeAbsent go-live target</td><td>MubeAbsent</td><td>Management + HR</td><td><span class="due">9 Oct 2026</span></td><td>Sets all downstream milestones</td></tr>
+            <tr><td>Email service and technical access</td><td>Portal / MubeAbsent</td><td>IT</td><td><span class="due">9 Oct 2026</span></td><td>Blocks password reset and notifications</td></tr>
+            <tr><td>Overtime HTTPS URL, business owner, name/logo/support contact</td><td>Overtime</td><td>Production + IT + Management</td><td><span class="due">9 Oct 2026</span></td><td>Needed to frame integration and acceptance</td></tr>
+            <tr><td>HR source, contact and test data set</td><td>MubeAbsent</td><td>HR + IT</td><td><span class="due">16 Oct 2026</span></td><td>HR integration and acceptance slip</td></tr>
+            <tr><td>Real acceptance accounts and business validation</td><td>Portal / MubeAbsent / Overtime</td><td>HR + Production + IT</td><td><span class="due">13 Nov 2026</span></td><td>Conditions opening to real users</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tooling card reveal">
+        <h3>Tooling &amp; licences — requests</h3>
+        <p class="tooling-sub">Company provision of the AI engineering tools used to develop and maintain the programme, so the work is carried out on company-managed accounts.</p>
+        <ul class="tooling-list">
+          <li>
+            <div>
+              <strong>Claude Max subscription</strong>
+              <small>AI assistant used for the development of the four applications.</small>
+            </div>
+            <span class="due">Requested</span>
+          </li>
+          <li>
+            <div>
+              <strong>DeepSeek API balance</strong>
+              <small>Development API credit; top-up to cover ongoing usage.</small>
+            </div>
+            <span class="due">Requested</span>
+          </li>
+        </ul>
+        <p class="tooling-owner">Addressed to: Management + IT.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="evidence" class="section section-alt">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Evidence</p>
+        <h2>What has been verified</h2>
+        <p class="section-sub">Every figure below comes from a recorded verification run carried out on 1–5 October 2026.</p>
+      </header>
+
+      <div class="evidence-grid">
+        <div class="card ev-card reveal">
+          <h3>Automated tests</h3>
+          <div class="bars">
+            <div class="bar-row"><span class="bar-label">Overtime</span><div class="bar"><span style="--w:26%"></span></div><span class="bar-val">88</span></div>
+            <div class="bar-row"><span class="bar-label">Portal</span><div class="bar"><span style="--w:57%"></span></div><span class="bar-val">195</span></div>
+            <div class="bar-row"><span class="bar-label">MubeAbsent</span><div class="bar"><span style="--w:17%"></span></div><span class="bar-val">60</span></div>
+          </div>
+          <p class="ev-note">343 tests green locally (88 Overtime · 195 Portal · 60 MubeAbsent), zero build warnings. Overtime's full suite — PostgreSQL concurrency and notification-health modules included — also runs green in remote CI, together with the front-end build and browser workflow.</p>
+        </div>
+        <div class="card ev-card reveal">
+          <h3>End-to-end checks</h3>
+          <ul class="ticks">
+            <li>49 HTTPS checks on the packaged Portal + MubeAbsent deployment: sign-in, catalogue, styles and forms, leave request, manager decision, refusal paths, comment confidentiality, account closure and shared logout.</li>
+            <li>Overtime browser workflow: pagination beyond 20 records, login and authenticated refresh, submission, approval, HR assignment, CSV preview/download, saved export history and logout; extended to the administration console, account creation/deactivation and password rotation.</li>
+            <li>4 notifications delivered end-to-end through SMTP capture and the Outlook desktop client.</li>
+            <li>Restart and restore rehearsal: accounts, sessions and approved leave preserved; restored database integrity confirmed.</li>
+          </ul>
+        </div>
+        <div class="card ev-card reveal">
+          <h3>In service</h3>
+          <ul class="ticks">
+            <li>Technicien Dashboard operating on Vercel with signed sessions on every page and API route.</li>
+            <li>Barcode label printing (40 × 20 mm), guided scanning with keyboard-layout normalisation, overdue-assignment alerts and 7-day usage trends in daily use.</li>
+            <li>Follow-up and improvement phases already scheduled with user feedback.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-titles">
+      <strong>Mubea Digital — programme progress</strong>
+      <p>Issued 5 October 2026 · next review Friday 9 October 2026</p>
+    </div>
+    <div class="footer-contact">
+      <span class="footer-label">Prepared by</span>
+      <strong>Yassir AMRANI</strong>
+      <p>Intern — Production · Mubea Suspension Components Morocco SARL</p>
+      <p class="footer-addr">Lot n° 98, Unité industrielle de la Zone Franche de Tanger Automotive City, dite TAC 3, Commune Jouamaa, Tanger, Morocco</p>
+      <p><a href="mailto:Yassir.AMRANI@mubea.com">Yassir.AMRANI@mubea.com</a> · <a href="https://www.mubea.com" target="_blank" rel="noopener">www.mubea.com</a></p>
+    </div>
+    <a class="btn btn-ghost btn-sm no-print footer-cta" href="https://mubeatechniciendashboard.vercel.app/" target="_blank" rel="noopener">Technicien Dashboard — live ↗</a>
+  </div>
+</footer>
+
+<div class="lightbox no-print" hidden>
+  <button class="lightbox-close" type="button" aria-label="Close">×</button>
+  <img alt="Planning Gantt — enlarged">
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
