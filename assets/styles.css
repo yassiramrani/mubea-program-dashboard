@@ -584,24 +584,6 @@ code {
 .figure figcaption a { font-weight: 600; text-decoration: none; }
 .figure figcaption a:hover { text-decoration: underline; }
 
-/* application screenshots */
-
-.shots {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 26px;
-  margin: 26px 0 0;
-}
-
-.shot { margin: 0; }
-
-.shot figcaption {
-  padding-top: 8px;
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.45;
-}
-
 /* ---------- Tables ---------- */
 
 .table-wrap { overflow-x: auto; }
