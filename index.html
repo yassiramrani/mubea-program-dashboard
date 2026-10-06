@@ -27,7 +27,7 @@
     </nav>
     <span class="date-badge">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5l3.2 1.9M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
-      Updated 5 October 2026
+      Updated 6 October 2026
     </span>
   </div>
 </header>
@@ -36,12 +36,12 @@
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Programme progress update · Monday 5 October 2026</p>
+      <p class="eyebrow">Programme progress update · Tuesday 6 October 2026</p>
       <h1>Four applications. One programme.<br><span>Full visibility on progress.</span></h1>
       <p class="lead">Status of the <strong>MubeAbsent</strong>, <strong>Mubea Portal</strong>, <strong>Mubea Technicien Dashboard</strong> and <strong>Overtime Management System</strong> projects — what has been delivered, what is verified, the updated planning and the decisions we are waiting for.</p>
       <div class="chips">
         <span class="chip">4 projects tracked</span>
-        <span class="chip">343 automated tests green</span>
+        <span class="chip">359 automated tests green</span>
         <span class="chip">CI passing on main</span>
         <span class="chip chip-warn">Next decisions due 9 October</span>
       </div>
@@ -70,9 +70,9 @@
           <p>MubeAbsent · Mubea Portal · Technicien Dashboard · Overtime</p>
         </div>
         <div class="kpi card reveal">
-          <span class="kpi-num">343</span>
+          <span class="kpi-num">359</span>
           <h3>Automated tests green</h3>
-          <p>88 Overtime · 195 Portal · 60 MubeAbsent — the full Overtime suite, PostgreSQL concurrency tests included, is green in remote CI</p>
+          <p>88 Overtime · 195 Portal · 60 MubeAbsent · 16 Technicien Dashboard — the full Overtime suite, PostgreSQL concurrency tests included, is green in remote CI</p>
         </div>
         <div class="kpi card reveal">
           <span class="kpi-num">49</span>
@@ -82,13 +82,20 @@
         <div class="kpi card reveal">
           <span class="kpi-num">1</span>
           <h3>Application already in service</h3>
-          <p>Technicien Dashboard — live on Vercel, with follow-up and improvements planned</p>
+          <p>Technicien Dashboard — live on Vercel; inventory workflow, priority colours and the buying guide released on 6 October</p>
         </div>
       </div>
 
       <div class="week-strip">
         <h3 class="strip-title">What changed since the last review</h3>
         <div class="week-grid">
+          <div class="week-item card reveal">
+            <span class="dot" style="--c:#7c3aed"></span>
+            <div>
+              <strong>Technicien Dashboard — inventory workflow, priority colours and buying guide live</strong>
+              <p>Accent-insensitive search, status/label filters, four sort orders, pagination, cross-page selection and filtered export; overdue returns shown in red across the KPIs, lists, rows and Pareto bars; buying guide comparing the most and least used tools; mobile navigation and the application's first automated tests (16). Deployed to the live service on 6 October.</p>
+            </div>
+          </div>
           <div class="week-item card reveal">
             <span class="dot" style="--c:#e8590c"></span>
             <div>
@@ -137,7 +144,7 @@
             <h3>Mubea Technicien Dashboard</h3>
             <span class="badge badge-live">In service</span>
           </header>
-          <p>Tools inventory with QR/barcode labels, overdue-assignment alerts and usage analytics — live on Vercel.</p>
+          <p>Tools inventory with QR/barcode labels, overdue-assignment alerts, search and filters, a buying guide and usage analytics — live on Vercel.</p>
           <div class="segs segs-5" aria-hidden="true"><span class="seg done"></span><span class="seg active"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div>
           <footer><span>Stage 2 of 5 · Service review</span><span class="go">Details →</span></footer>
         </a>
@@ -334,14 +341,17 @@
             <h4>What is live today</h4>
             <ul class="ticks">
               <li>Tools inventory with compact Code 128 barcode labels (40 × 20 mm), guided scanning and label printing.</li>
-              <li>Overdue-assignment highlighting, 7-day usage trends and utilisation dashboards.</li>
-              <li>Technician identification profiles for naming tools and photos.</li>
+              <li>Inventory search and filters: accent-insensitive multi-word search across tool, label code, technician and ID, status and label filters, four sort orders (name, oldest checkout, most and least used), 25/50/100 rows per page, cross-page selection and export of every matching tool.</li>
+              <li>Overdue returns stand out in red throughout: KPI cards, return follow-up and inventory rows, and the Pareto bars of tools with an outstanding overdue return.</li>
+              <li>Buying guide comparing the five most and five least used tools — "plan another unit" when a busy tool is out with a technician, "do not order" for never-scanned tools.</li>
+              <li>Technician identification profiles for naming tools and photos; mobile navigation with a skip-to-content link.</li>
               <li>Session security hardened: a signed session is required for every page and every API route.</li>
+              <li>16 automated tests (<code>npm test</code>) cover the search, filter, sort and buying-guide rules.</li>
               <li>Deployed and operating on Vercel — the first application of the programme in service.</li>
             </ul>
             <div class="callout callout-ok">
               <h5>Latest milestone</h5>
-              <p>Security hardening completed on 23 September — signed sessions across all pages and API routes.</p>
+              <p>Inventory workflow and decision support released on 6 October — search, filters, sorting and export; overdue returns emphasised in red from the KPI strip to the Pareto; buying guide for the most and least used tools; the application's first 16 automated tests. Three releases deployed to the live service the same day.</p>
             </div>
             <h4>Job stoppers</h4>
             <p class="nothing">Nothing to highlight.</p>
@@ -527,18 +537,19 @@
       <header class="section-head">
         <p class="eyebrow">Evidence</p>
         <h2>What has been verified</h2>
-        <p class="section-sub">Every figure below comes from a recorded verification run carried out on 1–5 October 2026.</p>
+        <p class="section-sub">Every figure below comes from a recorded verification run carried out on 1–6 October 2026.</p>
       </header>
 
       <div class="evidence-grid">
         <div class="card ev-card reveal">
           <h3>Automated tests</h3>
           <div class="bars">
-            <div class="bar-row"><span class="bar-label">Overtime</span><div class="bar"><span style="--w:26%"></span></div><span class="bar-val">88</span></div>
-            <div class="bar-row"><span class="bar-label">Portal</span><div class="bar"><span style="--w:57%"></span></div><span class="bar-val">195</span></div>
+            <div class="bar-row"><span class="bar-label">Overtime</span><div class="bar"><span style="--w:25%"></span></div><span class="bar-val">88</span></div>
+            <div class="bar-row"><span class="bar-label">Portal</span><div class="bar"><span style="--w:54%"></span></div><span class="bar-val">195</span></div>
             <div class="bar-row"><span class="bar-label">MubeAbsent</span><div class="bar"><span style="--w:17%"></span></div><span class="bar-val">60</span></div>
+            <div class="bar-row"><span class="bar-label">Technicien</span><div class="bar"><span style="--w:4%"></span></div><span class="bar-val">16</span></div>
           </div>
-          <p class="ev-note">343 tests green locally (88 Overtime · 195 Portal · 60 MubeAbsent), zero build warnings. Overtime's full suite — PostgreSQL concurrency and notification-health modules included — also runs green in remote CI, together with the front-end build and browser workflow.</p>
+          <p class="ev-note">359 tests green locally (88 Overtime · 195 Portal · 60 MubeAbsent · 16 Technicien Dashboard), zero build warnings. Overtime's full suite — PostgreSQL concurrency and notification-health modules included — also runs green in remote CI, together with the front-end build and browser workflow.</p>
         </div>
         <div class="card ev-card reveal">
           <h3>End-to-end checks</h3>
@@ -554,6 +565,7 @@
           <ul class="ticks">
             <li>Technicien Dashboard operating on Vercel with signed sessions on every page and API route.</li>
             <li>Barcode label printing (40 × 20 mm), guided scanning with keyboard-layout normalisation, overdue-assignment alerts and 7-day usage trends in daily use.</li>
+            <li>6 October release live: inventory search, filters, sorting, pagination and filtered export; overdue returns in red across the dashboard and the Pareto; buying guide for the most and least used tools; 16 automated tests green.</li>
             <li>Follow-up and improvement phases already scheduled with user feedback.</li>
           </ul>
         </div>
@@ -566,7 +578,7 @@
   <div class="wrap footer-inner">
     <div class="footer-titles">
       <strong>Mubea Digital — programme progress</strong>
-      <p>Issued 5 October 2026 · next review Friday 9 October 2026</p>
+      <p>Issued 6 October 2026 · next review Friday 9 October 2026</p>
     </div>
     <div class="footer-contact">
       <span class="footer-label">Prepared by</span>

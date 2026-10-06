@@ -314,7 +314,7 @@ code {
 
 .strip-title { margin: 0 0 14px; font-size: 15px; color: var(--navy); }
 
-.week-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.week-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 
 .week-item {
   display: flex;
