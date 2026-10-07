@@ -73,6 +73,12 @@ Windows are added for this terminal session.
 ## Updating the dashboard later
 
 - Content lives in `index.html` (text, statuses, tables).
+- The page opens with the "30-second view" board (`#board`): one row per application with
+  its state, the next date and what is needed from management. Update it together with the
+  matching detail section whenever a status changes.
+- Each project detail is a `<details>` panel, collapsed by default; its summary line has to
+  make sense on its own. Links to `#p-…` open the panel automatically (`assets/app.js`), and
+  printing or "Save as PDF" expands every panel first.
 - Styling: `assets/styles.css`; behaviour: `assets/app.js` (lightbox + reveal animation).
 - Replace the Gantt snapshots in `assets/img/` (`gantt-mubeabsent.png`, `gantt-portal.png`,
   `gantt-overtime.png`) and update the "Updated …" date in `index.html` when the planning

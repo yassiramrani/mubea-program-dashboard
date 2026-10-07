@@ -54,6 +54,33 @@
     });
   }
 
+  // The project details are disclosures: open the one the URL targets, so the
+  // summary table, the project cards and the navigation land on readable content.
+  function openTargetedDetail() {
+    var id = window.location.hash.slice(1);
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el && el.tagName === "DETAILS") el.open = true;
+  }
+
+  openTargetedDetail();
+  window.addEventListener("hashchange", openTargetedDetail);
+
+  // Also open on click, so a link still works when the hash is already unchanged.
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest ? event.target.closest('a[href^="#"]') : null;
+    if (!link) return;
+    var el = document.getElementById(link.getAttribute("href").slice(1));
+    if (el && el.tagName === "DETAILS") el.open = true;
+  });
+
+  // Printing or saving as PDF must contain the collapsed detail as well.
+  window.addEventListener("beforeprint", function () {
+    Array.prototype.forEach.call(document.querySelectorAll("details"), function (detail) {
+      detail.open = true;
+    });
+  });
+
   // Highlight the section currently in view
   var links = Array.prototype.slice.call(document.querySelectorAll(".mainnav a"));
   var sections = links

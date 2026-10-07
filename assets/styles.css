@@ -195,7 +195,7 @@ code {
 .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
 
 .chip {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: #e8f2ff;
   background: rgba(255, 255, 255, 0.1);
@@ -306,7 +306,7 @@ code {
 }
 
 .kpi h3 { margin: 0 0 6px; font-size: 15px; }
-.kpi p { margin: 0; font-size: 13px; color: var(--muted); }
+.kpi p { margin: 0; font-size: 14.5px; color: var(--muted); }
 
 /* ---------- Week strip ---------- */
 
@@ -324,7 +324,7 @@ code {
 }
 
 .week-item strong { display: block; font-size: 14px; margin-bottom: 3px; }
-.week-item p { margin: 0; font-size: 13px; color: var(--muted); }
+.week-item p { margin: 0; font-size: 14.5px; color: var(--muted); }
 
 .dot {
   flex: 0 0 auto;
@@ -335,6 +335,65 @@ code {
   margin-top: 5px;
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--c, var(--blue)) 18%, transparent);
 }
+
+/* ---------- Executive board (30-second view) ---------- */
+
+.board-wrap { overflow-x: auto; }
+
+.board {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+.board th, .board td { text-align: left; padding: 15px 16px; vertical-align: top; }
+
+.board thead th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: #f4f7fb;
+  border-bottom: 1px solid var(--line);
+}
+
+.board tbody tr + tr th, .board tbody tr + tr td { border-top: 1px solid var(--line); }
+
+.board tbody th { border-left: 4px solid var(--c, var(--blue)); font-size: 16px; }
+
+.board tbody th a { color: var(--navy); text-decoration: none; }
+
+.board tbody th a:hover { text-decoration: underline; }
+
+.board td small { display: block; margin-top: 2px; font-size: 13.5px; color: var(--muted); }
+
+.board-none { color: var(--muted); }
+
+.board-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 16px;
+  padding: 15px 18px;
+  border-radius: 12px;
+  background: var(--amber-soft);
+  border: 1px solid #f0d5ae;
+  font-size: 14.5px;
+}
+
+.board-note strong { color: #8a4409; }
+
+.board-note span { color: #6b4a1f; }
+
+.board-note a { margin-left: auto; font-weight: 700; text-decoration: none; white-space: nowrap; }
+
+.board-note a:hover { text-decoration: underline; }
 
 /* ---------- Project overview cards ---------- */
 
@@ -358,7 +417,7 @@ code {
 
 .pcard header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
 .pcard h3 { margin: 0; font-size: 18px; color: var(--navy); letter-spacing: -0.01em; }
-.pcard p { margin: 0 0 16px; font-size: 14px; color: var(--muted); }
+.pcard p { margin: 0 0 16px; font-size: 15px; color: var(--muted); }
 
 .pcard footer {
   display: flex;
@@ -407,18 +466,67 @@ code {
 
 .detail { padding: 30px; margin-bottom: 26px; border-top: 4px solid var(--c, var(--blue)); }
 
+/* The detail is a disclosure: the collapsed row must read on its own. */
+
+.detail > .detail-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  cursor: pointer;
+  list-style: none;
+  padding: 2px;
+}
+
+.detail > .detail-summary::-webkit-details-marker { display: none; }
+
+.detail > .detail-summary:hover .summary-name { text-decoration: underline; text-underline-offset: 3px; }
+
+.detail > .detail-summary:focus-visible { outline: 3px solid var(--blue-soft); outline-offset: 4px; }
+
+.detail > .detail-summary .dot { margin-top: 0; }
+
+.summary-name { font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
+
+.summary-state { flex: 1 1 320px; font-size: 14.5px; line-height: 1.5; color: var(--muted); }
+
+.summary-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.summary-more::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.detail[open] .summary-more::after { transform: rotate(225deg); }
+
+.detail[open] > .detail-head { margin-top: 22px; }
+
 .detail-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 22px; flex-wrap: wrap; }
 
 .detail-head h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 4px; font-size: 22px; color: var(--navy); letter-spacing: -0.01em; }
 
 .detail-head .dot { width: 12px; height: 12px; margin: 0; }
 
-.platform { margin: 0; font-size: 13px; color: var(--muted); }
+.platform { margin: 0; font-size: 14px; color: var(--muted); }
 
 .detail-grid { display: grid; grid-template-columns: 1fr 330px; gap: 30px; }
 
 .detail-main h4, .detail-side h4 {
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--blue);
@@ -502,8 +610,8 @@ code {
 }
 
 .callout h5 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.09em; }
-.callout p { margin: 0; font-size: 14px; }
-.callout ul { margin: 0; padding-left: 18px; font-size: 14px; }
+.callout p { margin: 0; font-size: 15px; }
+.callout ul { margin: 0; padding-left: 18px; font-size: 15px; }
 .callout li { margin-bottom: 5px; }
 .callout li:last-child { margin-bottom: 0; }
 
@@ -539,7 +647,7 @@ code {
 }
 
 .step strong { display: block; font-size: 13.5px; font-weight: 600; color: #3d4f63; }
-.step small { color: var(--muted); font-size: 12px; }
+.step small { color: var(--muted); font-size: 13.5px; }
 
 .step.done .step-dot { background: var(--c, var(--green)); }
 .step.done strong { color: var(--green); }
@@ -788,6 +896,8 @@ code {
   .hero { padding: 54px 0 60px; }
   .section { padding: 54px 0; }
   .detail { padding: 22px; }
+  .summary-state { flex-basis: 100%; }
+  .summary-more { margin-left: 0; }
 }
 
 @media (max-width: 560px) {
@@ -808,5 +918,7 @@ code {
   .section { padding: 26px 0; }
   .card { box-shadow: none; break-inside: avoid; }
   .detail { break-inside: avoid-page; }
+  .board { border-radius: 0; }
+  .detail > .detail-summary { padding: 0; }
   .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }

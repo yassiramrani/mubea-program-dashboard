@@ -20,6 +20,7 @@
       <span class="brand-text"><strong>Mubea Digital</strong><small>Programme progress</small></span>
     </a>
     <nav class="mainnav" aria-label="Sections">
+      <a href="#board">Summary</a>
       <a href="#overview">Overview</a>
       <a href="#projects">Projects</a>
       <a href="#planning">Planning &amp; decisions</a>
@@ -46,11 +47,66 @@
         <span class="chip chip-warn">Next decisions due 9 October</span>
       </div>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#projects">Explore the projects</a>
+        <a class="btn btn-primary" href="#board">The 30-second view</a>
         <a class="btn btn-ghost" href="https://mubeatechniciendashboard.vercel.app/" target="_blank" rel="noopener">
           Technicien Dashboard — live
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9"/></svg>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="board" class="section">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Read this first</p>
+        <h2>The programme in 30 seconds</h2>
+        <p class="section-sub">One row per application: the state today, the next date that matters, and what we need from you. Click a project name for the full detail.</p>
+      </header>
+
+      <div class="board-wrap">
+        <table class="board">
+          <thead>
+            <tr>
+              <th scope="col">Application</th>
+              <th scope="col">State</th>
+              <th scope="col">Next milestone</th>
+              <th scope="col">Needs you</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="--c:#0f9d8f">
+              <th scope="row"><a href="#p-mubeabsent">MubeAbsent</a></th>
+              <td><span class="badge badge-progress">Prototype complete</span></td>
+              <td>HR requirements confirmed<br><small>Target 16 Oct 2026</small></td>
+              <td><span class="due">9 Oct</span> HR: first-batch scope and go-live date</td>
+            </tr>
+            <tr style="--c:#2563eb">
+              <th scope="row"><a href="#p-portal">Mubea Portal</a></th>
+              <td><span class="badge badge-ready">Ready to deploy</span></td>
+              <td>Launch prerequisites confirmed<br><small>Target 20 Nov 2026</small></td>
+              <td><span class="due">9 Oct</span> Management + IT: server, domain, HTTPS</td>
+            </tr>
+            <tr style="--c:#7c3aed">
+              <th scope="row"><a href="#p-technicien">Technicien Dashboard</a></th>
+              <td><span class="badge badge-live">In service</span></td>
+              <td>Service review and user feedback<br><small>Target 27 Nov 2026</small></td>
+              <td class="board-none">Nothing — no action required</td>
+            </tr>
+            <tr style="--c:#e8590c">
+              <th scope="row"><a href="#p-overtime">Overtime</a></th>
+              <td><span class="badge badge-progress">Phase 1 complete</span></td>
+              <td>Notifications configured and verified<br><small>Target 13 Nov 2026</small></td>
+              <td><span class="due">9 Oct</span> IT: hosting, URL and email sender</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="board-note">
+        <strong>5 decisions due Friday 9 October</strong>
+        <span>Hosting and HTTPS · MubeAbsent first-batch scope · MubeAbsent go-live target · email service access · Overtime URL and business owner</span>
+        <a href="#planning">See who owns what →</a>
       </div>
     </div>
   </section>
@@ -170,13 +226,16 @@
       </header>
 
       <!-- MubeAbsent -->
-      <article class="detail card reveal" id="p-mubeabsent" style="--c:#0f9d8f">
+      <details class="detail card reveal" id="p-mubeabsent" style="--c:#0f9d8f">
+        <summary class="detail-summary">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="summary-name">MubeAbsent</span>
+          <span class="badge badge-progress">Prototype complete</span>
+          <span class="summary-state">Annual-leave workflow, team calendar and administration complete — production preparation under way</span>
+          <span class="summary-more">Full detail</span>
+        </summary>
         <header class="detail-head">
-          <div>
-            <h3><span class="dot" aria-hidden="true"></span>MubeAbsent</h3>
-            <p class="platform">Ships inside the Mubea Portal deployment · ASP.NET Core · shared sign-in, separate storage</p>
-          </div>
-          <span class="badge badge-progress">Prototype complete · preparing production</span>
+          <p class="platform">Ships inside the Mubea Portal deployment · ASP.NET Core · shared sign-in, separate storage</p>
         </header>
         <div class="detail-grid">
           <div class="detail-main">
@@ -221,16 +280,19 @@
             <a href="assets/img/gantt-mubeabsent.png" target="_blank" rel="noopener">Open full size</a>
           </figcaption>
         </figure>
-      </article>
+      </details>
 
       <!-- Mubea Portal -->
-      <article class="detail card reveal" id="p-portal" style="--c:#2563eb">
+      <details class="detail card reveal" id="p-portal" style="--c:#2563eb">
+        <summary class="detail-summary">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="summary-name">Mubea Portal</span>
+          <span class="badge badge-ready">Ready to deploy</span>
+          <span class="summary-state">Role-based application catalogue and account administration packaged behind one HTTPS address — waiting for a host</span>
+          <span class="summary-more">Full detail</span>
+        </summary>
         <header class="detail-head">
-          <div>
-            <h3><span class="dot" aria-hidden="true"></span>Mubea Portal</h3>
-            <p class="platform">ASP.NET Core MVC · Docker + Caddy · local accounts, Entra ID ready</p>
-          </div>
-          <span class="badge badge-ready">Prototype complete · ready to deploy</span>
+          <p class="platform">ASP.NET Core MVC · Docker + Caddy · local accounts, Entra ID ready</p>
         </header>
         <div class="detail-grid">
           <div class="detail-main">
@@ -273,16 +335,19 @@
             <a href="assets/img/gantt-portal.png" target="_blank" rel="noopener">Open full size</a>
           </figcaption>
         </figure>
-      </article>
+      </details>
 
       <!-- Technicien Dashboard -->
-      <article class="detail card reveal" id="p-technicien" style="--c:#7c3aed">
-        <header class="detail-head">
-          <div>
-            <h3><span class="dot" aria-hidden="true"></span>Mubea Technicien Dashboard</h3>
-            <p class="platform">Next.js · Prisma · Vercel — <a href="https://mubeatechniciendashboard.vercel.app/" target="_blank" rel="noopener">mubeatechniciendashboard.vercel.app</a> (sign-in required)</p>
-          </div>
+      <details class="detail card reveal" id="p-technicien" style="--c:#7c3aed">
+        <summary class="detail-summary">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="summary-name">Mubea Technicien Dashboard</span>
           <span class="badge badge-live">In service</span>
+          <span class="summary-state">Tools inventory live with barcode labels and scanning — 6 October inventory and buying-guide release deployed</span>
+          <span class="summary-more">Full detail</span>
+        </summary>
+        <header class="detail-head">
+          <p class="platform">Next.js · Prisma · Vercel — <a href="https://mubeatechniciendashboard.vercel.app/" target="_blank" rel="noopener">mubeatechniciendashboard.vercel.app</a> (sign-in required)</p>
         </header>
         <div class="detail-grid">
           <div class="detail-main">
@@ -315,16 +380,19 @@
             </ol>
           </aside>
         </div>
-      </article>
+      </details>
 
       <!-- Overtime -->
-      <article class="detail card reveal" id="p-overtime" style="--c:#e8590c">
+      <details class="detail card reveal" id="p-overtime" style="--c:#e8590c">
+        <summary class="detail-summary">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="summary-name">Overtime Management System</span>
+          <span class="badge badge-progress">Phase 1 complete</span>
+          <span class="summary-state">Overtime workflow, approvals, console and notifications delivered and verified — Phase 2 awaits IT decisions</span>
+          <span class="summary-more">Full detail</span>
+        </summary>
         <header class="detail-head">
-          <div>
-            <h3><span class="dot" aria-hidden="true"></span>Overtime Management System</h3>
-            <p class="platform">Django REST · React + Vite · PostgreSQL · SQLite for local development</p>
-          </div>
-          <span class="badge badge-progress">Phase 1 complete · console &amp; notifications delivered</span>
+          <p class="platform">Django REST · React + Vite · PostgreSQL · SQLite for local development</p>
         </header>
         <div class="detail-grid">
           <div class="detail-main">
@@ -376,7 +444,7 @@
             <a href="assets/img/gantt-overtime.png" target="_blank" rel="noopener">Open full size</a>
           </figcaption>
         </figure>
-      </article>
+      </details>
     </div>
   </section>
 
