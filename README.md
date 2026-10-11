@@ -1,11 +1,12 @@
 # Mubea Digital — Programme Progress Dashboard
 
-A self-contained static website that presents the progress of the four projects:
+A self-contained static website that presents the progress of the five projects:
 
 - **MubeAbsent** — annual-leave workflow, team calendar, administration (production preparation)
 - **Mubea Portal** — application catalogue, accounts and roles, production packaging (ready to deploy)
 - **Mubea Technicien Dashboard** — tools inventory with barcode labels (in service)
 - **Overtime Management System** — overtime workflow, approvals, assignments, CSV hand-off (Phase 1 verified; administration console, account management and password change delivered)
+- **MSCM Investment Monitor** — investment portfolio from SAP exports: planned cost, spending, commitments and exposure, project drill-down, exceptions and CSV export, with a durable local import history (prototype in review)
 
 Contents: overview KPIs, per-project status with application screenshots, verified evidence,
 provisional planning (Gantt snapshots), the open decisions on the critical path and the tooling
