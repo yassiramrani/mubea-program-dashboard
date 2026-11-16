@@ -1,0 +1,71 @@
+{
+  "updated": "16 November 2026",
+  "projects": [
+    {
+      "id": "portal",
+      "name": "Mubea Portal",
+      "state": "Local verification passed",
+      "delivered": "Application catalogue, accounts and roles. Added self-service password changes and immediate revocation of existing Portal and MubeAbsent sessions, including after administrator password resets.",
+      "evidence": "197 automated tests passed. Browser verification uses isolated demo accounts.",
+      "next": "IT confirms the host, domain, HTTPS, backups and operational owner.",
+      "stoppers": "Corporate hosting and identity decisions; operational acceptance. Local completion does not establish a production deployment.",
+      "image": "password-desktop.png",
+      "repo": "Mubea_Portal_Prototype_Source"
+    },
+    {
+      "id": "mubeabsent",
+      "name": "MubeAbsent",
+      "state": "HR validation pending",
+      "delivered": "15 absence codes, configurable rules, employee requests, scoped manager decisions, private team calendar, administrative UA records and reversals. Added a personal activity feed; comments and other employees' events are excluded.",
+      "evidence": "86 automated tests passed. Policy defaults remain unconfirmed until HR validates them.",
+      "next": "HR confirms deductions, eligibility, supporting documents, balances, employee data and the first release scope.",
+      "stoppers": "HR policy and user acceptance; employee data source; configured notification delivery. The activity feed is available in the application; email delivery is not implemented for this release.",
+      "image": "activity-desktop.png",
+      "repo": "Mubea_Portal_Prototype_Source"
+    },
+    {
+      "id": "overtime",
+      "name": "Overtime Management System",
+      "state": "Local workflow verified",
+      "delivered": "Submission, approval, HR assignment, reviewed CSV export, account administration and notification outbox. Browser login now uses HttpOnly session cookies with CSRF protection; existing token API clients remain supported.",
+      "evidence": "87 backend tests passed; three PostgreSQL-only concurrency tests skipped on local SQLite. Frontend build and isolated browser workflow passed.",
+      "next": "Configure and verify the production host, PostgreSQL, sender and notification scheduler with IT.",
+      "stoppers": "MFA, verified email and recovery remain Phase 2 work. HR acceptance, real delivery and production concurrency checks are required before launch.",
+      "image": "overtime-desktop.png",
+      "repo": "mubea_overtime_management_system"
+    },
+    {
+      "id": "faucon",
+      "name": "MSCM Faucon / Investment Monitor",
+      "state": "Finance validation pending",
+      "delivered": "Three-file SAP import linked by project and WBS identifiers, reconciliation, access scopes, procurement and planning records. Added comparison of compatible dated snapshots using exact decimal amounts; missing projects have no invented delta.",
+      "evidence": "27 backend tests passed and frontend build passed. Existing owner data remains unchanged.",
+      "next": "Finance confirms currency, reporting period and budget definitions, then supplies compatible historical snapshots and project owners/dates.",
+      "stoppers": "Financial definitions and business acceptance; incomplete project metadata; corporate sign-in and hosting. Planned costs must not be described as approved budgets without confirmation.",
+      "image": "faucon-comparison-desktop.png",
+      "repo": "mubea_faucon"
+    },
+    {
+      "id": "technicien",
+      "name": "Workshop Tool Tracking",
+      "state": "New checks verified locally",
+      "delivered": "Existing inventory, scanning, labels, assignments, overdue returns and buying guide. Added separate liveness and database-readiness endpoints with generic responses and no user data.",
+      "evidence": "17 tests passed and Next.js production build passed. The configured database ping succeeded; local readiness correctly returns 503 while a session signing secret is missing. Production deployment is not verified.",
+      "next": "Deploy the reviewed checks through the existing release process and agree monitoring ownership.",
+      "stoppers": "Operational monitoring, backup/restore ownership and workshop acceptance. The existing broad access policy is preserved; a role-policy change requires a business decision.",
+      "image": null,
+      "repo": "mubea_technicien_dashboard"
+    },
+    {
+      "id": "mrp",
+      "name": "Spare-parts / MRP",
+      "state": "SAP / Bluebird assessment",
+      "delivered": "Existing inventory, machine/line classification and Italy workbook import. Added a read-only assessment export: typed data, photos, quality exceptions and SHA-256 manifest. Accounts, passwords and sessions are excluded.",
+      "evidence": "26 tests passed and production build passed. Shared stock remains one balance even when a part has multiple machine links.",
+      "next": "PM, Production and IT assess SAP fit and the Bluebird alternative using the process and data handover.",
+      "stoppers": "The local implementation was rejected. The platform decision applies only to spare-parts/MRP. Target mappings, physical stock and locations, process ownership and hardware acceptance remain unconfirmed. The older spare-parts repository is reference material for this same workstream.",
+      "image": null,
+      "repo": "mubea_MRP"
+    }
+  ]
+}

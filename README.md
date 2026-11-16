@@ -1,18 +1,8 @@
-# Mubea Digital — Programme Progress Dashboard
+# Mubea Digital - Programme Progress Dashboard
 
-A self-contained static website that presents the progress of the five projects:
+Six workstreams across seven repositories: Portal, MubeAbsent, Overtime, MSCM Faucon, Workshop Tool Tracking and spare-parts/MRP (including the older spare-parts reference repository). Updated 16 November 2026.
 
-- **MubeAbsent** — annual-leave workflow, team calendar, administration (production preparation)
-- **Mubea Portal** — application catalogue, accounts and roles, production packaging (ready to deploy)
-- **Mubea Technicien Dashboard** — tools inventory with barcode labels (in service)
-- **Overtime Management System** — overtime workflow, approvals, assignments, CSV hand-off (Phase 1 verified; administration console, account management and password change delivered)
-- **MSCM Investment Monitor** — investment portfolio from SAP exports: planned cost, spending, commitments and exposure, project drill-down, exceptions and CSV export, with a durable local import history (prototype in review)
-
-Contents: overview KPIs, per-project status with application screenshots, verified evidence,
-provisional planning (Gantt snapshots), the open decisions on the critical path and the tooling
-requests.
-
-No build step, no dependencies — plain HTML/CSS/JS.
+Current delivered scope, verification and job stoppers live in `status.json`. Run `python tools/update-dashboard.py` after editing it; the generated `index.html` uses the existing static stylesheet and disclosure behavior. Screenshots use isolated demo data. October plans and past CI results are not renewed as current commitments. Source changes do not establish a production release.
 
 ## Preview locally
 
@@ -73,18 +63,8 @@ Windows are added for this terminal session.
 
 ## Updating the dashboard later
 
-- Content lives in `index.html` (text, statuses, tables).
-- The page opens with the "30-second view" board (`#board`): one row per application with
-  its state, the next date and what is needed from management. Update it together with the
-  matching detail section whenever a status changes.
-- Each project detail is a `<details>` panel, collapsed by default; its summary line has to
-  make sense on its own. Links to `#p-…` open the panel automatically (`assets/app.js`), and
-  printing or "Save as PDF" expands every panel first.
-- Styling: `assets/styles.css`; behaviour: `assets/app.js` (lightbox + reveal animation).
-- Replace the Gantt snapshots in `assets/img/` (`gantt-mubeabsent.png`, `gantt-portal.png`,
-  `gantt-overtime.png`) and update the "Updated …" date in `index.html` when the planning
-  changes.
-- Publishing is manual: the project is linked to Vercel through the CLI (`.vercel/project.json`),
-  not through a Git integration, so pushing to GitHub does not deploy. Run `npx vercel --prod`
-  from this folder instead — behind the corporate proxy, set `NODE_EXTRA_CA_CERTS` first as
-  described above. `npx vercel git connect` would switch the project to deploy-on-push.
+- Edit `status.json`, then run `python tools/update-dashboard.py` from this repository.
+- Update screenshots and their provenance under `assets/img/2026-11-13/` (the verification-batch directory; captures span 13-16 November).
+- Keep local checks, production deployment and business acceptance distinct. Do not invent dates or infer budgets/HR policies.
+- `assets/styles.css` and `assets/app.js` retain the established design and disclosure/print behavior.
+- Publishing is manual: the CLI-linked Vercel project has no Git deployment integration. A Git push does not publish this site. No publication was performed for this update.
