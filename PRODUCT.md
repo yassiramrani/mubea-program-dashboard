@@ -10,7 +10,7 @@ Yassir, plant management and the HR, Finance, PM, Production and IT stakeholders
 
 ## Scope
 
-Six workstreams across seven source repositories: Mubea Portal, MubeAbsent, Overtime, MSCM Faucon / Investment Monitor, Workshop Tool Tracking, and spare-parts/MRP. The older spare-parts prototype is reference material for the MRP domain, not a separate stock system to roll out. The SAP/Bluebird platform decision applies only to spare-parts/MRP; the local implementation in that domain was rejected.
+Six workstreams across seven source repositories: Mubea Portal, MubeAbsent, Overtime, MSCM Faucon / Investment Monitor, Mubea Technician Dashboard (Workshop Tool Tracking), and spare-parts/MRP. The older spare-parts prototype is reference material for the MRP domain, not a separate stock system to roll out. The user's corrected scope assigns Anna's SAP/Bluebird feedback and rejected local implementation to the technician dashboard. Spare-parts/MRP has its own inventory validation and operating decisions.
 
 ## Evidence and reporting rules
 
@@ -18,7 +18,7 @@ Use recorded build/test results, repository implementation and documented owner 
 
 ## Completion and release
 
-Distinguish implemented source, locally verified behavior, deployed behavior and business acceptance. HR confirms policy and employee data; Finance confirms financial meanings and reporting inputs; PM/Production/IT decide the MRP platform and process ownership; IT/application owners confirm hosting, identity, notifications, backups and monitoring. Unknown dates remain uncommitted. A Git push does not publish the CLI-linked reporting site.
+Distinguish implemented source, locally verified behavior, deployed behavior and business acceptance. HR confirms policy and employee data; Finance confirms financial meanings and reporting inputs; PM/Production/IT assess SAP or Bluebird for the technician dashboard and agree process ownership; IT/application owners confirm hosting, identity, notifications, backups and monitoring. Unknown dates remain uncommitted. A Git push does not publish the CLI-linked reporting site.
 
 ## Interface
 

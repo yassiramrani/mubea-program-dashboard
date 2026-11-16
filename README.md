@@ -2,6 +2,8 @@
 
 Six workstreams across seven repositories: Portal, MubeAbsent, Overtime, MSCM Faucon, Workshop Tool Tracking and spare-parts/MRP (including the older spare-parts reference repository). Updated 16 November 2026.
 
+Corrected scope: Anna's SAP/Bluebird feedback concerns the Mubea technician dashboard (Workshop Tool Tracking). Spare-parts/MRP has separate inventory and operational validation.
+
 Current delivered scope, verification and job stoppers live in `status.json`. Run `python tools/update-dashboard.py` after editing it; the generated `index.html` uses the existing static stylesheet and disclosure behavior. Screenshots use isolated demo data. October plans and past CI results are not renewed as current commitments. Source changes do not establish a production release.
 
 ## Preview locally

@@ -47,23 +47,23 @@
     },
     {
       "id": "technicien",
-      "name": "Workshop Tool Tracking",
-      "state": "New checks verified locally",
+      "name": "Mubea Technician Dashboard",
+      "state": "SAP / Bluebird assessment",
       "delivered": "Existing inventory, scanning, labels, assignments, overdue returns and buying guide. Added separate liveness and database-readiness endpoints with generic responses and no user data.",
       "evidence": "17 tests passed and Next.js production build passed. The configured database ping succeeded; local readiness correctly returns 503 while a session signing secret is missing. Production deployment is not verified.",
-      "next": "Deploy the reviewed checks through the existing release process and agree monitoring ownership.",
-      "stoppers": "Operational monitoring, backup/restore ownership and workshop acceptance. The existing broad access policy is preserved; a role-policy change requires a business decision.",
+      "next": "PM, Production and IT assess whether SAP meets the technician dashboard requirements or Bluebird should provide the solution. Use the documented tool-tracking process for the assessment.",
+      "stoppers": "Anna's feedback concerns this application: the local implementation was rejected and SAP / Bluebird must be assessed. The approximate 1-2 day Bluebird estimate is indicative. Platform fit, process ownership and workshop acceptance remain open; deployment instructions are reference material pending that decision.",
       "image": null,
       "repo": "mubea_technicien_dashboard"
     },
     {
       "id": "mrp",
       "name": "Spare-parts / MRP",
-      "state": "SAP / Bluebird assessment",
+      "state": "Local verification passed",
       "delivered": "Existing inventory, machine/line classification and Italy workbook import. Added a read-only assessment export: typed data, photos, quality exceptions and SHA-256 manifest. Accounts, passwords and sessions are excluded.",
       "evidence": "26 tests passed and production build passed. Shared stock remains one balance even when a part has multiple machine links.",
-      "next": "PM, Production and IT assess SAP fit and the Bluebird alternative using the process and data handover.",
-      "stoppers": "The local implementation was rejected. The platform decision applies only to spare-parts/MRP. Target mappings, physical stock and locations, process ownership and hardware acceptance remain unconfirmed. The older spare-parts repository is reference material for this same workstream.",
+      "next": "Validate physical stock, locations, classifications and the receiving/issuing workflow with the inventory owner; complete scanner and label-printer acceptance.",
+      "stoppers": "Physical stock and locations, process ownership, operating arrangements and hardware acceptance remain unconfirmed. Anna's SAP / Bluebird feedback concerns the technician dashboard. The older spare-parts repository is reference material for this same MRP workstream.",
       "image": null,
       "repo": "mubea_MRP"
     }
